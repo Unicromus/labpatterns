@@ -6,8 +6,14 @@ import domain.Medicament;
 public class Main {
 
 	public static void main(String[] args) {
-		Covid19Pacient p1=new Covid19Pacient("aitor", 35);
-		new PacientSymptomGUI(p1);
+
+		FactorySymptom factorySymptom = new FactorySymptom();
+
+		Covid19Pacient p1=new Covid19Pacient("aitor", 35, factorySymptom);
+		PacientSymptomGUI psGUI1 = new PacientSymptomGUI(p1);
+
+		Medicament m=new Medicament("Ibuprofeno", factorySymptom);
+		MedicalGUI mgui=new MedicalGUI(m);
 
 	}
 
